@@ -4,10 +4,11 @@ Using Cannon with Three.
 
 ## Links
 
-https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
+### Three
 
-https://github.com/schteppe/cannon.js
+- Scene setup doc: https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
 
-## To-Do
+### Cannon
 
-### Switch to https://github.com/react-spring/cannon-es for ESM and support
+- Maintained fork: https://github.com/react-spring/cannon-es (ESM support)
+- Original repo: https://github.com/schteppe/cannon.js
