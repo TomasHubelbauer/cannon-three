@@ -11,9 +11,14 @@ window.addEventListener('load', () => {
   document.body.append(renderer.domElement);
 
   const geometry = new BoxGeometry();
-  const material = new MeshBasicMaterial({ color: 0x0080ff, wireframe: true });
+  const material = new MeshBasicMaterial({ color: 0xffffff, wireframe: true });
   const cube = new Mesh(geometry, material);
   scene.add(cube);
+
+  const geometry2 = new BoxGeometry();
+  const material2 = new MeshBasicMaterial({ color: 0xabcdef });
+  const cube2 = new Mesh(geometry2, material2);
+  scene.add(cube2);
 
   const world = new World();
   world.gravity.set(0, 0, -9.82 /* m/s² */);
@@ -33,6 +38,8 @@ window.addEventListener('load', () => {
     world.step(1 / 60);
     cube.position.copy(body.position);
     cube.quaternion.copy(body.quaternion);
+    cube2.position.copy(body.position);
+    cube2.quaternion.copy(body.quaternion);
     renderer.render(scene, camera);
   }()
 });
