@@ -13,18 +13,14 @@ window.addEventListener('load', () => {
   const geometry = new BoxGeometry();
   const material = new MeshBasicMaterial({ color: 0x0080ff, wireframe: true });
   const cube = new Mesh(geometry, material);
-  cube.rotation.x = 0.1;
-  cube.rotation.y = 0.2;
   scene.add(cube);
 
   const world = new World();
   world.gravity.set(0, 0, -9.82 /* m/s² */);
 
   const shape = new Box(new Vec3(1, 1, 1));
-  const body = new Body({ mass: 1 });
+  const body = new Body({ mass: 1, position: new Vec3(0, 0, 4), angularVelocity: new Vec3(.1, .2, .3), angularDamping: .4 });
   body.addShape(shape);
-  body.angularVelocity.set(0, 10, 0);
-  body.angularDamping = 0.5;
   world.addBody(body);
 
   const groundBody = new Body({ mass: 0 });
